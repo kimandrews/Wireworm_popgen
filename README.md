@@ -93,11 +93,12 @@ sh 05-gatk.sh
 
 ```
 mkdir 06-VCFTools
+cd 06-VCFTools
 ```
 
 *  Remove indels
 ```
-vcftools --vcf ./05-gatk/mapped.vcf --out ./06-VCFTools/mapped_snps --remove-indels --recode
+vcftools --vcf ../05-gatk/mapped.vcf --out mapped_snps --remove-indels --recode
 ```
 
 *  Remove SNPs with depth <5
