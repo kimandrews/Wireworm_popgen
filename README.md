@@ -1,4 +1,4 @@
-# Pipelines for wireworm genome assembly & RADseq genotyping
+# Pipeline for wireworm genome assembly & RADseq genotyping
 
 Analyses implemented in the following manuscript:
 
@@ -54,7 +54,7 @@ mkdir 02-process_radtags
 Example command: 
 
 ```
-process_radtags -r -c -q -P -1 ./01-hts_AdapterTrimmed/CAGATCAT_R1.fastq.gz -2 ./01-hts_AdapterTrimmed/CAGATCAT_R2.fastq.gz -b ./stacks_files/Plate1_barcodes.txt -e sbfI -i gzfastq -o 02-process_radtags --bestrad
+process_radtags -r -c -q -P -1 ./01-hts_AdapterTrimmed/CAGATCAT_R1.fastq.gz -2 ./01-hts_AdapterTrimmed/CAGATCAT_R2.fastq.gz -b ./stacks_files/Plate1_barcodes.txt -e sbfI -i gzfastq -o ./02-process_radtags --bestrad
 ```
 
 
