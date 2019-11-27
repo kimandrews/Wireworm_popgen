@@ -45,7 +45,7 @@ Example command:
 hts_AdapterTrimmer -m 50 -1 ./00-RawData/CAGATCAT_S178_L008_R1_001.fastq.gz -2 ./00-RawData/CAGATCAT_S178_L008_R2_001.fastq.gz -fgp ./01-hts_AdapterTrimmed/CAGATCAT -L ./01-hts_AdapterTrimmed/CAGATCAT_log
 ```
 
-#### 2. Demultiplex by barcode using STACKS
+#### 2. Clean & demultiplex by barcode using STACKS
 
 ```
 mkdir 02-process_radtags
