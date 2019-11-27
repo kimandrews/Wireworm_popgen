@@ -31,7 +31,7 @@ Andrews KR, A Gerritsen, A Rashed, D Crowder, SI Rondon, WG van Herk, R Vernon, 
 
 Raw fastq.gz files are located in ```./00-RawData```
 
-#### 1. Trim adapters
+#### 1. Trim adapters using HTStream
 
 ```
 mkdir 01-hts_AdapterTrimmed
@@ -45,7 +45,7 @@ Example command:
 hts_AdapterTrimmer -m 50 -1 ./00-RawData/CAGATCAT_S178_L008_R1_001.fastq.gz -2 ./00-RawData/CAGATCAT_S178_L008_R2_001.fastq.gz -fgp ./01-hts_AdapterTrimmed/CAGATCAT -L ./01-hts_AdapterTrimmed/CAGATCAT_log
 ```
 
-#### 2. Demultiplex by barcode
+#### 2. Demultiplex by barcode using STACKS
 
 ```
 mkdir 02-process_radtags
@@ -58,7 +58,7 @@ process_radtags -r -c -q -P -1 ./01-hts_AdapterTrimmed/CAGATCAT_R1.fastq.gz -2 .
 ```
 
 
-#### 3. Remove PCR duplicates
+#### 3. Remove PCR duplicates using HTStream
 
 ```
 mkdir 03-superdedup
@@ -69,7 +69,7 @@ Example command:
 hts_SuperDeduper -fgp ./03-superdedup/ID021_dedup   -L ./03-superdedup/ID021.log  -1 ./02-process_radtags/ID021.1.fq.gz -2 ./02-process_radtags/ID021.2.fq.gz
 ```
 
-#### 4. Map to reference genome
+#### 4. Map to reference genome using BWA
 
 ```
 mkdir 04-Mapped
@@ -82,14 +82,14 @@ Example command:
 bwa mem -t 5 -R '@RG\tID:bwa\tSM:WA049_dedup\tPL:ILLUMINA' ./idx/idx ./03-superdedup/ID021_dedup_R1.fastq.gz ./03-superdedup/ID021_dedup_R2.fastq.gz  2>./04-Mapped/ID021_dedup.log | samtools view -bS - | samtools sort - > ./04-Mapped/ID021_dedup.bam
 ```
 
-#### 5. Genotype calling
+#### 5. Genotype calling using GATK
 
 ```
 mkdir 05-gatk
 sh 05-gatk.sh
 ```
 
-#### 6. Filtering SNPs
+#### 6. Filter SNPs using VCFTools
 
 ```
 mkdir 06-VCFTools
