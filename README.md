@@ -35,8 +35,6 @@ Raw fastq.gz files are located in ```./00-RawData```
 
 ```
 mkdir 01-hts_AdapterTrimmed
-python 01-SetupCleaning.py
-parallel -j 55 < 01-cleaning.sh
 ```
 
 Example command:
