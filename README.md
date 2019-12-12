@@ -2,7 +2,7 @@
 
 Analyses implemented in the following manuscript:
 
-Andrews KR, A Gerritsen, A Rashed, D Crowder, SI Rondon, WG van Herk, R Vernon, KW Wanner, CM Wilson, DD New, MW Fagnan, PA Hohenlohe, SS Hunter. Genomic analysis of three wireworm species (Coleoptera: Elateridae) reveals putative cryptic species, population structure, and adaptive responses to agricultural pest control. *In review*.
+Andrews KR, A Gerritsen, A Rashed, D Crowder, SI Rondon, WG van Herk, R Vernon, KW Wanner, CM Wilson, DD New, MW Fagnan, PA Hohenlohe, SS Hunter. Genomic analysis of three wireworm (Coleoptera: Elateridae) species reveals putative cryptic species, population structure, and adaptive responses to agricultural pest control. *In review*.
 
 ## Requirements
 
