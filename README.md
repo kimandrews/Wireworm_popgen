@@ -77,11 +77,7 @@ run_BUSCO.py -i ../01-MaSuRCA-assembly/CA.mr.41.15.17.0.029/final.genome.scf.fas
 
 generate_plot.py -wd ./
 ```
-![Busco Figure1](https://raw.githubusercontent.com/kimandrews/Wireworm_popgen/master/busco_figure.png)
-![Busco Figure2](https://github.com/kimandrews/Wireworm_popgen/blob/master/busco_figure.png)
-
-![Busco Figure3](https://raw.github.com/kimandrews/Wireworm_popgen/master/busco_figure.png)
-![Busco Figure4](busco_figure.png)
+![Busco Figure](busco_figure.png){:height="50%" width="50%"}
 
 
 
