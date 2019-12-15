@@ -50,11 +50,9 @@ cp ../masurca/MaSuRCA-3.2.4/sr_config_example.txt sr_config.txt
 
 Installation of Busco is beyond the scope of this document, but the exact version of Busco used can be obtained by doing the following:
 ```
-cd ~/MaSuRCA-hybrid-assembly
 git clone https://gitlab.com/ezlab/busco.git
 cd busco
 git checkout 3927d240f8b5bf8232066d51fce4ac7554bf29a6
-
 ```
 
 The database used was downloaded with the following command:
@@ -64,6 +62,7 @@ wget http://busco.ezlab.org/datasets/insecta_odb9.tar.gz
 
 ###### Run busco
 ```
+cd ~/MaSuRCA-hybrid-assembly
 module load python
 module load ncbi-blast
 module load hmmer
@@ -78,7 +77,11 @@ run_BUSCO.py -i ../01-MaSuRCA-assembly/CA.mr.41.15.17.0.029/final.genome.scf.fas
 
 generate_plot.py -wd ./
 ```
-![Busco Figure](https://raw.githubusercontent.com/kimandrews/Wireworm_popgen/master/busco_figure.png)
+![Busco Figure1](https://raw.githubusercontent.com/kimandrews/Wireworm_popgen/master/busco_figure.png)
+![Busco Figure2](https://github.com/kimandrews/Wireworm_popgen/blob/master/busco_figure.png)
+
+![Busco Figure3](https://raw.github.com/kimandrews/Wireworm_popgen/master/busco_figure.png)
+![Busco Figure4](busco_figure.png)
 
 
 
