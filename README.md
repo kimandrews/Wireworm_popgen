@@ -77,7 +77,7 @@ run_BUSCO.py -i ../01-MaSuRCA-assembly/CA.mr.41.15.17.0.029/final.genome.scf.fas
 
 generate_plot.py -wd ./
 ```
-![Busco Figure](busco_figure.png){:height="50%" width="50%"}
+![Busco Figure](busco_figure.png)
 
 
 
