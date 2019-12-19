@@ -7,7 +7,7 @@ Andrews KR, A Gerritsen, A Rashed, D Crowder, SI Rondon, WG van Herk, R Vernon, 
 ## Requirements
 
 * MaSuRCA v3.2.4
-* BUSCO v3
+* BUSCO v3.0.2
 * HTStream
 * STACKS v2.3e
 * BWA v0.7.17
@@ -18,11 +18,67 @@ Andrews KR, A Gerritsen, A Rashed, D Crowder, SI Rondon, WG van Herk, R Vernon, 
 
 #### 1. Assembly of *Limonius californicus* genome from Illumina, SLR, and PacBio reads
 
-[Masurca commands]
+##### Install Masurca:
+```
+cd ~/MaSuRCA-hybrid-assembly
+mkdir masurca
+cd masurca
+wget ftp://ftp.genome.umd.edu/pub/MaSuRCA/latest/MaSuRCA-3.2.4.tar.gz
+tar xvf MaSuRCA-3.2.4.tar.gz
+./install.sh
+```
 
-#### 2. Assessment of genome completeness
+##### PacBio data was converted from fastq to fasta format and combined with Illumina SLR (synthetic long read) data and provided to MaSuRCA as a single file:
+PACBIO=./pacbio+SLR_for_Masurca/combined.fa
 
-[BUSCO command]
+##### Setup MaSuRCA assembly
+```
+cd ~/MaSuRCA-hybrid-assembly
+
+mkdir 01-MaSuRCA-assembly
+cd 01-MaSuRCA-assembly
+cp ../masurca/MaSuRCA-3.2.4/sr_config_example.txt sr_config.txt
+
+#Edit sr_config.txt to add Illumina and long read data. See MaSuRCA/sr_config.txt for final MaSuRCA config file.
+
+
+../masurca/MaSuRCA-3.2.4/bin/masurca sr_config.txt
+```
+
+
+##### 2. Assessment of genome completeness
+
+Installation of Busco is beyond the scope of this document, but the exact version of Busco used can be obtained by doing the following:
+```
+git clone https://gitlab.com/ezlab/busco.git
+cd busco
+git checkout 3927d240f8b5bf8232066d51fce4ac7554bf29a6
+```
+
+The database used was downloaded with the following command:
+```
+wget http://busco.ezlab.org/datasets/insecta_odb9.tar.gz
+```
+
+###### Run busco
+```
+cd ~/MaSuRCA-hybrid-assembly
+module load python
+module load ncbi-blast
+module load hmmer
+module load R/3.5.0
+
+mkdir 02-Busco
+
+export AUGUSTUS_CONFIG_PATH=~/opt/src/augustus/augustus-3.3.1/config
+
+run_BUSCO.py -i ../01-MaSuRCA-assembly/CA.mr.41.15.17.0.029/final.genome.scf.fasta \
+  -c 1 -m geno -l ~/databases/busco/insecta_odb9 -o busco-test
+
+generate_plot.py -wd ./
+```
+![Busco Figure](busco_figure.png)
+
 
 
 
