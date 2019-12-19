@@ -1,4 +1,4 @@
-# Pipeline for wireworm genome assembly & RADseq genotyping
+# Pipeline for wireworm genome assembly, RADseq genotyping, & genome skimming
 
 Analyses implemented in the following manuscript:
 
@@ -147,3 +147,4 @@ vcftools --vcf mapped_snps_D5_GQ15_mis80_misind80_maxD_minD_xsing.recode.vcf --o
 ```
 vcftools --vcf sub01_snps_D5_GQ15_mis80_misind80_maxD_xsing_xmono.recode.vcf --out sub01_snps_D5_GQ15_mis80_misind80_maxD_xsing_xmono_thin1000 --thin 1000 --recode
 ```
+
