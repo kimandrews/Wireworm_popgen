@@ -13,6 +13,10 @@ Andrews KR, A Gerritsen, A Rashed, D Crowder, SI Rondon, WG van Herk, R Vernon, 
 * BWA v0.7.17
 * GATK v4.1.1.0
 * VCFTools v0.1.15
+* BLAT
+* MAFFT v.7.429
+* Python v.2.7
+* ARC
 
 ## Genome assembly
 
@@ -128,7 +132,7 @@ hts_SuperDeduper -fgp ./03-superdedup/ID021_dedup   -L ./03-superdedup/ID021.log
 ```
 mkdir 04-Mapped
 python 04-SetupMapping.py
-parallel -j 55 < 04-mapping-commands.sh
+sh 04-mapping-commands.sh
 ```
 
 Example command:
@@ -204,3 +208,39 @@ vcftools --vcf mapped_snps_D5_GQ15_mis80_misind80_maxD_minD_xsing.recode.vcf --o
 vcftools --vcf sub01_snps_D5_GQ15_mis80_misind80_maxD_xsing_xmono.recode.vcf --out sub01_snps_D5_GQ15_mis80_misind80_maxD_xsing_xmono_thin1000 --thin 1000 --recode
 ```
 
+## Genome skimming
+
+#### 1. Iterative mapping & *de novo* assembly with ARC
+
+Reference sequences for *Limonius californicus* COI and 16S (GenBank KT852377.1) are located in ```./refs```
+
+Raw shotgun sequence data (fastq.gz files) are located in ```./00-RawData```
+
+```
+mkdir 02-16sCO1-ARC-assemblies
+cd 02-16sCO1-ARC-assemblies
+python ../02-Setup-ARC.py
+ARC > logout
+```
+
+#### 2. Extract ARC contigs that blast with a good score to the orignal targets
+
+COI:
+
+```
+mkdir 03-CO1-contigs-ARC
+python 03-setup_CO1_extract-ARC.py
+sh 03-extract_CO1-ARC.sh
+cat ./03-CO1-contigs-ARC/*.fasta > ./03-CO1-contigs-ARC/all_combined.fasta
+mafft --auto --thread 50 ./03-CO1-contigs-ARC/all_combined.fasta > ./03-CO1-contigs-ARC/all_combined_aligned.fasta
+```
+
+16S:
+
+```
+mkdir 03-16s-contigs-ARC
+python 03-setup_16S_extract-ARC.py
+sh 03-extract_16S-ARC.sh
+cat ./03-16s-contigs-ARC/*.fasta > ./03-16s-contigs-ARC/all_combined.fasta
+mafft --auto --thread 50 ./03-16s-contigs-ARC/all_combined.fasta > ./03-16s-contigs-ARC/all_combined_aligned.fasta
+```
