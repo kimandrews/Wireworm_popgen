@@ -223,7 +223,7 @@ python ../02-Setup-ARC.py
 ARC > logout
 ```
 
-#### 2. Extract ARC contigs that blast with a good score to the orignal targets
+#### 2. Extract ARC contigs that blast with a good score to the original targets
 
 COI:
 
