@@ -210,11 +210,25 @@ vcftools --vcf sub01_snps_D5_GQ15_mis80_misind80_maxD_xsing_xmono.recode.vcf --o
 
 ## Genome skimming
 
+Scripts and configuration files for this step are included in this GitHub repository in the 16s_and_CO1_assembly folder.
+
+#### 0. Read cleaning
+
+[HTStream](https://github.com/ibest/HTStream) was used to clean the raw shotgun reads prior to *de novo* assembly. Reads were cleaned to remove PCR duplicates, screen for PhiX, trim Illumina adapters, trim reads containing N's, screen against a collection of known adapter sequences, and finally to quality trim the reads. The 01-clean.py script was used to set up the cleaning pipeline. 
+
+Raw shotgun sequence data (fastq.gz files) are located in ```./00-RawData``` and cleaned reads are written to ```./01-Cleaned/```.
+
+```
+01-clean.py
+01-cleaning_commands.sh
+```
+
+
 #### 1. Iterative mapping & *de novo* assembly with ARC
+
 
 Reference sequences for *Limonius californicus* COI and 16S (GenBank KT852377.1) are located in ```./refs```
 
-Raw shotgun sequence data (fastq.gz files) are located in ```./00-RawData```
 
 ```
 mkdir 02-16sCO1-ARC-assemblies
