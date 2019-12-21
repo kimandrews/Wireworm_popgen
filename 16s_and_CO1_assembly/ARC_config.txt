@@ -1,0 +1,162 @@
+## Configuration options start with a single "#" and use
+## Name=value pairs
+##
+## Data Columns define samples:
+## Sample_ID:Sample_ID
+## FileName: path for fasta/fastq file
+## FileType: PE1, PE2, or SE
+## FileFormat: fasta or fastq
+# reference=./targets.fa
+# numcycles=2
+# mapper=bowtie2
+## mapper=blat
+## assembler=spades
+# assembler=newbler
+# only-assembler=False
+# nprocs=50
+# format=fastq
+# verbose=True
+# urt=True
+# map_against_reads=False
+# assemblytimeout=6
+# bowtie2_k=5
+# rip=True
+# subsample=1
+# maskrepeats=False
+# sloppymapping=False
+# sra=False
+Sample_ID	FileName	FileType
+MO	../01-Cleaned/MO_R1.fastq	PE1
+MO	../01-Cleaned/MO_R2.fastq	PE2
+Z2	../01-Cleaned/Z2_R1.fastq	PE1
+Z2	../01-Cleaned/Z2_R2.fastq	PE2
+SD4	../01-Cleaned/SD4_R1.fastq	PE1
+SD4	../01-Cleaned/SD4_R2.fastq	PE2
+WA22	../01-Cleaned/WA22_R1.fastq	PE1
+WA22	../01-Cleaned/WA22_R2.fastq	PE2
+LI58L	../01-Cleaned/LI58L_R1.fastq	PE1
+LI58L	../01-Cleaned/LI58L_R2.fastq	PE2
+ID22	../01-Cleaned/ID22_R1.fastq	PE1
+ID22	../01-Cleaned/ID22_R2.fastq	PE2
+ID40	../01-Cleaned/ID40_R1.fastq	PE1
+ID40	../01-Cleaned/ID40_R2.fastq	PE2
+LI31L	../01-Cleaned/LI31L_R1.fastq	PE1
+LI31L	../01-Cleaned/LI31L_R2.fastq	PE2
+ID118	../01-Cleaned/ID118_R1.fastq	PE1
+ID118	../01-Cleaned/ID118_R2.fastq	PE2
+OR1	../01-Cleaned/OR1_R1.fastq	PE1
+OR1	../01-Cleaned/OR1_R2.fastq	PE2
+ID134A	../01-Cleaned/ID134A_R1.fastq	PE1
+ID134A	../01-Cleaned/ID134A_R2.fastq	PE2
+ID23H	../01-Cleaned/ID23H_R1.fastq	PE1
+ID23H	../01-Cleaned/ID23H_R2.fastq	PE2
+Z1	../01-Cleaned/Z1_R1.fastq	PE1
+Z1	../01-Cleaned/Z1_R2.fastq	PE2
+ID49	../01-Cleaned/ID49_R1.fastq	PE1
+ID49	../01-Cleaned/ID49_R2.fastq	PE2
+SP1S	../01-Cleaned/SP1S_R1.fastq	PE1
+SP1S	../01-Cleaned/SP1S_R2.fastq	PE2
+OR52	../01-Cleaned/OR52_R1.fastq	PE1
+OR52	../01-Cleaned/OR52_R2.fastq	PE2
+ID126	../01-Cleaned/ID126_R1.fastq	PE1
+ID126	../01-Cleaned/ID126_R2.fastq	PE2
+AL	../01-Cleaned/AL_R1.fastq	PE1
+AL	../01-Cleaned/AL_R2.fastq	PE2
+WA17	../01-Cleaned/WA17_R1.fastq	PE1
+WA17	../01-Cleaned/WA17_R2.fastq	PE2
+SD2	../01-Cleaned/SD2_R1.fastq	PE1
+SD2	../01-Cleaned/SD2_R2.fastq	PE2
+SD5	../01-Cleaned/SD5_R1.fastq	PE1
+SD5	../01-Cleaned/SD5_R2.fastq	PE2
+LI26L	../01-Cleaned/LI26L_R1.fastq	PE1
+LI26L	../01-Cleaned/LI26L_R2.fastq	PE2
+WA11	../01-Cleaned/WA11_R1.fastq	PE1
+WA11	../01-Cleaned/WA11_R2.fastq	PE2
+HB5H	../01-Cleaned/HB5H_R1.fastq	PE1
+HB5H	../01-Cleaned/HB5H_R2.fastq	PE2
+ID125S	../01-Cleaned/ID125S_R1.fastq	PE1
+ID125S	../01-Cleaned/ID125S_R2.fastq	PE2
+LI44L	../01-Cleaned/LI44L_R1.fastq	PE1
+LI44L	../01-Cleaned/LI44L_R2.fastq	PE2
+SD3	../01-Cleaned/SD3_R1.fastq	PE1
+SD3	../01-Cleaned/SD3_R2.fastq	PE2
+ID131L	../01-Cleaned/ID131L_R1.fastq	PE1
+ID131L	../01-Cleaned/ID131L_R2.fastq	PE2
+Zymo3	../01-Cleaned/Zymo3_R1.fastq	PE1
+Zymo3	../01-Cleaned/Zymo3_R2.fastq	PE2
+ID23	../01-Cleaned/ID23_R1.fastq	PE1
+ID23	../01-Cleaned/ID23_R2.fastq	PE2
+SD1	../01-Cleaned/SD1_R1.fastq	PE1
+SD1	../01-Cleaned/SD1_R2.fastq	PE2
+CA17A	../01-Cleaned/CA17A_R1.fastq	PE1
+CA17A	../01-Cleaned/CA17A_R2.fastq	PE2
+CA14B	../01-Cleaned/CA14B_R1.fastq	PE1
+CA14B	../01-Cleaned/CA14B_R2.fastq	PE2
+CA2C	../01-Cleaned/CA2C_R1.fastq	PE1
+CA2C	../01-Cleaned/CA2C_R2.fastq	PE2
+ID5	../01-Cleaned/ID5_R1.fastq	PE1
+ID5	../01-Cleaned/ID5_R2.fastq	PE2
+WA36	../01-Cleaned/WA36_R1.fastq	PE1
+WA36	../01-Cleaned/WA36_R2.fastq	PE2
+ID27	../01-Cleaned/ID27_R1.fastq	PE1
+ID27	../01-Cleaned/ID27_R2.fastq	PE2
+WA25	../01-Cleaned/WA25_R1.fastq	PE1
+WA25	../01-Cleaned/WA25_R2.fastq	PE2
+HG	../01-Cleaned/HG_R1.fastq	PE1
+HG	../01-Cleaned/HG_R2.fastq	PE2
+AM2A	../01-Cleaned/AM2A_R1.fastq	PE1
+AM2A	../01-Cleaned/AM2A_R2.fastq	PE2
+ID18	../01-Cleaned/ID18_R1.fastq	PE1
+ID18	../01-Cleaned/ID18_R2.fastq	PE2
+AO	../01-Cleaned/AO_R1.fastq	PE1
+AO	../01-Cleaned/AO_R2.fastq	PE2
+HB2H	../01-Cleaned/HB2H_R1.fastq	PE1
+HB2H	../01-Cleaned/HB2H_R2.fastq	PE2
+ID7	../01-Cleaned/ID7_R1.fastq	PE1
+ID7	../01-Cleaned/ID7_R2.fastq	PE2
+ID44	../01-Cleaned/ID44_R1.fastq	PE1
+ID44	../01-Cleaned/ID44_R2.fastq	PE2
+AM3A	../01-Cleaned/AM3A_R1.fastq	PE1
+AM3A	../01-Cleaned/AM3A_R2.fastq	PE2
+WA8	../01-Cleaned/WA8_R1.fastq	PE1
+WA8	../01-Cleaned/WA8_R2.fastq	PE2
+WA4	../01-Cleaned/WA4_R1.fastq	PE1
+WA4	../01-Cleaned/WA4_R2.fastq	PE2
+CG1	../01-Cleaned/CG1_R1.fastq	PE1
+CG1	../01-Cleaned/CG1_R2.fastq	PE2
+HB1	../01-Cleaned/HB1_R1.fastq	PE1
+HB1	../01-Cleaned/HB1_R2.fastq	PE2
+LIL	../01-Cleaned/LIL_R1.fastq	PE1
+LIL	../01-Cleaned/LIL_R2.fastq	PE2
+MT7	../01-Cleaned/MT7_R1.fastq	PE1
+MT7	../01-Cleaned/MT7_R2.fastq	PE2
+WA1	../01-Cleaned/WA1_R1.fastq	PE1
+WA1	../01-Cleaned/WA1_R2.fastq	PE2
+ID103	../01-Cleaned/ID103_R1.fastq	PE1
+ID103	../01-Cleaned/ID103_R2.fastq	PE2
+HB4H	../01-Cleaned/HB4H_R1.fastq	PE1
+HB4H	../01-Cleaned/HB4H_R2.fastq	PE2
+LI61L	../01-Cleaned/LI61L_R1.fastq	PE1
+LI61L	../01-Cleaned/LI61L_R2.fastq	PE2
+ID8	../01-Cleaned/ID8_R1.fastq	PE1
+ID8	../01-Cleaned/ID8_R2.fastq	PE2
+CG2	../01-Cleaned/CG2_R1.fastq	PE1
+CG2	../01-Cleaned/CG2_R2.fastq	PE2
+SP2S	../01-Cleaned/SP2S_R1.fastq	PE1
+SP2S	../01-Cleaned/SP2S_R2.fastq	PE2
+ID123	../01-Cleaned/ID123_R1.fastq	PE1
+ID123	../01-Cleaned/ID123_R2.fastq	PE2
+LI1L	../01-Cleaned/LI1L_R1.fastq	PE1
+LI1L	../01-Cleaned/LI1L_R2.fastq	PE2
+HB3H	../01-Cleaned/HB3H_R1.fastq	PE1
+HB3H	../01-Cleaned/HB3H_R2.fastq	PE2
+WA9	../01-Cleaned/WA9_R1.fastq	PE1
+WA9	../01-Cleaned/WA9_R2.fastq	PE2
+AM1A	../01-Cleaned/AM1A_R1.fastq	PE1
+AM1A	../01-Cleaned/AM1A_R2.fastq	PE2
+MT2	../01-Cleaned/MT2_R1.fastq	PE1
+MT2	../01-Cleaned/MT2_R2.fastq	PE2
+CA18A	../01-Cleaned/CA18A_R1.fastq	PE1
+CA18A	../01-Cleaned/CA18A_R2.fastq	PE2
+ID129H	../01-Cleaned/ID129H_R1.fastq	PE1
+ID129H	../01-Cleaned/ID129H_R2.fastq	PE2

@@ -214,30 +214,29 @@ Scripts and configuration files for this step are included in this GitHub reposi
 
 #### 0. Read cleaning
 
-[HTStream](https://github.com/ibest/HTStream) was used to clean the raw shotgun reads prior to *de novo* assembly. Reads were cleaned to remove PCR duplicates, screen for PhiX, trim Illumina adapters, trim reads containing N's, screen against a collection of known adapter sequences, and finally to quality trim the reads. The 01-clean.py script was used to set up the cleaning pipeline. 
+[HTStream](https://github.com/ibest/HTStream) was used to clean the raw shotgun reads prior to *de novo* assembly. Reads were cleaned to remove PCR duplicates, screen for PhiX, trim Illumina adapters, trim reads containing N's, screen against a collection of known adapter sequences, and finally to quality trim the reads. The 01-clean.py script was used to set up the cleaning pipeline. [SPAdes assembler](http://cab.spbu.ru/software/spades/) was used to do a preliminary assembly of the cleaned reads. The contigs resulting from this assembly were not included in this publication.
 
-Raw shotgun sequence data (fastq.gz files) are located in ```./00-RawData``` and cleaned reads are written to ```./01-Cleaned/```.
+Raw shotgun sequence data (fastq.gz files) were stored in ```./00-RawData``` and cleaned reads are written to ```./01-Cleaned/```.
 
 ```
-01-clean.py
-01-cleaning_commands.sh
+python 01-clean.py
+sh 01-cleaning_commands.sh
+sh 01-assembly_commands.sh
 ```
 
+#### 1. Iterative mapping & *de novo* assembly with [ARC](https://github.com/ibest/ARC)
 
-#### 1. Iterative mapping & *de novo* assembly with ARC
-
-
-Reference sequences for *Limonius californicus* COI and 16S (GenBank KT852377.1) are located in ```./refs```
+A set of 16S and COI reference sequences for *Limonius californicus* (GenBank KT852377.1) and other wireworm species (manually identified from SPAdes assembly) were collected and stored in ```combined.fa``` and used to initiate read recruitment and assembly using [ARC](https://github.com/ibest/ARC) with configuration supplied by the included ARC_config.txt.
 
 
 ```
 mkdir 02-16sCO1-ARC-assemblies
 cd 02-16sCO1-ARC-assemblies
 python ../02-Setup-ARC.py
-ARC > logout
+ARC > log.out
 ```
 
-#### 2. Extract ARC contigs that blast with a good score to the original targets
+#### 2. Extract and orient ARC contigs that blat with a good score to the original targets, create initial alignment with mafft. This process was set up using the included 03-setup_CO1_extract-ARC.py and 03-setup_16s_extract-ARC.py scripts, and relies on the blat_and_extract.py script.
 
 COI:
 
@@ -258,3 +257,5 @@ sh 03-extract_16S-ARC.sh
 cat ./03-16s-contigs-ARC/*.fasta > ./03-16s-contigs-ARC/all_combined.fasta
 mafft --auto --thread 50 ./03-16s-contigs-ARC/all_combined.fasta > ./03-16s-contigs-ARC/all_combined_aligned.fasta
 ```
+
+#### Further analysis of the resulting contigs was carried out using other software as described in the manuscript.
